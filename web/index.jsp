@@ -115,7 +115,7 @@
     <div class="primenu">
         <iframe id="mainIframe" src="welcome.jsp" frameborder="0"></iframe>
     </div>
-    <footer>计算机2024-3 方志</footer>
+    <footer>版权所有</footer>
 </div>
 <script src="js/jquery-3.6.0.min.js"></script>
 <script>
