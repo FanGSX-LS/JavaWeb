@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="lib2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/JavaWeb_Web_exploded/WEB-INF/lib/mysql-connector-j-8.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/JavaWeb_Web_exploded/WEB-INF/lib/fastjson2-2.0.53.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

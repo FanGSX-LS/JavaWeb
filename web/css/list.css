@@ -1,0 +1,136 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('bluearchive.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    transition: 0.5s;
+    font-family: 'CustomFont', sans-serif;
+    font-size: 15px
+}
+
+html, body {
+    margin: 0;
+    padding: 15px;
+}
+
+/*查询区域 S*/
+
+/*查询区域 E*/
+/*按钮区域 S*/
+/*按钮区域 E*/
+
+/*表格区域 S*/
+.search-box {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    border-radius: 15px;
+    padding: 10px;
+    background: white;
+    justify-content: space-between;
+    box-shadow: #0000001c 0px 2px 9px;
+}
+
+.search-box form {
+    margin: 0;
+}
+
+.table-box {
+    height: 65vh;
+    margin-top: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: #0000001c 0 2px 9px;
+}
+
+.btn-box {
+    float: right;
+}
+
+table tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+table tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.table-box table {
+    /*表格中的列之间默认有间距*/
+    border-collapse: collapse; /*合并列与列之间间隙*/
+    margin-top: 10px;
+    width: 100%;
+}
+
+.table-box table tr td {
+    text-align: center;
+    height: 60px;
+    padding: 0 15px;
+}
+
+.table-box table tr:hover {
+    background: rgba(97, 97, 97, 0.37);
+}
+
+.table-box table tr th {
+    height: 45px;
+    background-color: #fbfbfb;
+}
+
+.table-box table tr th.option {
+    width: 150px;
+}
+
+.table-box table tr td button {
+    height: 30px;
+    font-size: 14px;
+}
+
+/*表格区域 E*/
+
+/*页码区域 S*/
+.pager {
+    line-height: 30px;
+    height: 30px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.pager ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pager ul li {
+    float: left;
+    margin-left: 15px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.pager ul li a:hover {
+    color: #18a4ea;
+}
+
+.pager ul li.active {
+    padding: 0 10px;
+    background-color: #18a4ea;
+    border-radius: 3px;
+}
+
+.pager ul li.active a {
+    color: #ffffff;
+}
+
+.container {
+    width: 100%;
+}
+
+/*页码区域 E*/

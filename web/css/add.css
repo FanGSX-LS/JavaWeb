@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('bluearchive.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    transition: 0.5s;
+    font-family: 'CustomFont', sans-serif;
+    font-size: 15px
+}
+
+html, body {
+    margin: 0;
+    padding: 15px;
+}
+
+header .title {
+    height: 50px;
+    line-height: 50px;
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+.main {
+    background: white;
+    border-radius: 15px;
+    box-shadow: #0000001c 0 2px 9px;
+    padding: 20px;
+    height: auto;
+}
+
+button {
+    margin-right: 10px;
+}
+
+.main form {
+    height: auto;
+    justify-content: space-between;
+}
+
+.main .form-item {
+    margin-top: 15px;
+}
+
+.main .form-item label {
+    width: 150px;
+    /*
+    label默认为行内元素，无法设置大小
+    需要设置成行内块元素
+    */
+    display: inline-block;
+    text-align: right;
+}
+
+.main .form-item input {
+    width: 250px;
+}
+
+.main .form-item input[type=radio] {
+    width: 20px;
+}

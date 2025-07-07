@@ -1,0 +1,102 @@
+/*公共样式 S*/
+* {
+    font-size: 16px;
+    color: #696868;
+}
+
+a {
+    text-decoration: none; /*清除下划线*/
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+label {
+    font-size: 18px;
+}
+
+input, select, textarea {
+    font-size: 18px;
+    width: 150px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 4px;
+    border: 1px solid #cccccc;
+    margin-right: 15px;
+}
+
+input:hover, select:hover, textarea:hover {
+    border: 1px solid #1bc1e5;
+}
+
+/*:focus表示光标在其身上时生效*/
+input:focus, select:focus, textarea:focus {
+    border: 1px solid #1bc1e5;
+    outline: none; /*获得焦点时的边框*/
+}
+
+input[type=radio] {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+}
+
+textarea {
+    width: 300px;
+    height: 150px;
+}
+
+button {
+    height: 35px;
+    padding: 0 10px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #e8e8e8;
+    transform: scale(1.2);
+}
+
+/*蓝色按钮*/
+button.primary {
+    background-color: #018ffb;
+    border: 1px solid #018ffb;
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+button.add {
+    background-color: #67c23a;
+    border: 1px solid #49ff00;
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+button.primary:hover {
+    background-color: #1c9afa;
+}
+
+/*红色按钮*/
+button.danger {
+    background-color: #de051f;
+    border: 1px solid #de051f;
+    color: #ffffff;
+}
+
+button.add:hover {
+    background-color: rgb(148.6, 212.3, 117.1);
+    border-color: rgb(148.6, 212.3, 117.1);
+    color: #ffffff;
+}
+
+button.danger:hover {
+    background-color: #f3223b;
+}
+
+/*公共样式 E*/
