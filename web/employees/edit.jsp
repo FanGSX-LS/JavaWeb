@@ -13,6 +13,13 @@
     boolean updateSuccess = false;
     String errorMsg = "";
     String isActiveValue = "在职";
+<<<<<<< Updated upstream
+=======
+
+    // 查询所有部门（用于下拉选项）
+    String sqlDepts = "SELECT id, name FROM departments ORDER BY id ASC";
+    ResultSet rsDepts = DbConnect.select(sqlDepts, null);
+>>>>>>> Stashed changes
 
     if ("update".equals(action)) {
         String password = request.getParameter("password");
@@ -20,7 +27,11 @@
         String email = request.getParameter("email");
         String department_id = request.getParameter("department_id");
         String phone = request.getParameter("phone");
+<<<<<<< Updated upstream
         isActiveValue = request.getParameter("is_active"); /
+=======
+        isActiveValue = request.getParameter("is_active");
+>>>>>>> Stashed changes
 
         boolean hasError = false;
         if (password == null || password.trim().isEmpty()) {
@@ -35,13 +46,19 @@
         } else if (phone == null || phone.trim().isEmpty()) {
             hasError = true;
             errorMsg = "联系电话不能为空";
+        } else if (department_id == null || department_id.trim().isEmpty()) {
+            hasError = true;
+            errorMsg = "请选择部门";
         } else if (isActiveValue == null || !"在职".equals(isActiveValue) && !"离职".equals(isActiveValue)) {
             hasError = true;
             errorMsg = "请选择有效的员工状态";
         }
 
         if (!hasError) {
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
             String sqlUpdate = "UPDATE `employees` SET " +
                     "`password`=?, `username`=?, `email`=?, " +
                     "`department_id`=?, `phone`=?, `is_active`=? " +
@@ -57,7 +74,10 @@
         }
     }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     String sqlSelect = "SELECT * FROM `employees` WHERE `id`=?";
     ResultSet rs = DbConnect.select(sqlSelect, new Object[]{id});
     if (!rs.next()) {
@@ -65,7 +85,10 @@
         return;
     }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     String password = rs.getString("password");
     String dbUsername = rs.getString("username");
     String dbDepartmentId = rs.getString("department_id");
@@ -125,7 +148,21 @@
 
         <div class="form-item">
             <label for="department_id">部门：</label>
+<<<<<<< Updated upstream
             <input type="text" id="department_id" name="department_id" value="<%=dbDepartmentId%>"/>
+=======
+            <select id="department_id" name="department_id">
+                <option value="">请选择部门</option>
+                <% while (rsDepts.next()) {
+                    String deptId = rsDepts.getString("id");
+                    String deptName = rsDepts.getString("name");
+                %>
+                <option value="<%=deptId%>" <%= deptId.equals(dbDepartmentId) ? "selected" : "" %>>
+                    <%=deptName%>
+                </option>
+                <% } %>
+            </select>
+>>>>>>> Stashed changes
             <span class="error" id="departmentError"></span>
         </div>
 
@@ -178,7 +215,7 @@
             var cmfPsw = $("#cmfPsw").val().trim();
             var username = $("#username").val().trim();
             var email = $("#email").val().trim();
-            var department = $("#department_id").val().trim();
+            var department = $("#department_id").val(); // 注意这里是获取选中值
             var phone = $("#phone").val().trim();
             var isActive = $("#is_active").val();
 
@@ -203,7 +240,7 @@
             }
 
             if (department === "") {
-                $("#departmentError").text("部门不能为空");
+                $("#departmentError").text("请选择部门");
                 isValid = false;
             }
 

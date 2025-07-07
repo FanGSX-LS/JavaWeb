@@ -9,7 +9,11 @@
 <head>
     <title>设备信息管理后台</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< Updated upstream
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+=======
+    <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.min.css">
+>>>>>>> Stashed changes
     <link rel="stylesheet" href="css/style.css">
     <style>
 
@@ -113,7 +117,7 @@
     </div>
     <footer>计算机2024-3 方志</footer>
 </div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/jquery-3.6.0.min.js"></script>
 <script>
     $(function () {
         let currentActiveItem = null;

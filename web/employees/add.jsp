@@ -4,15 +4,27 @@
 <%@ page pageEncoding="UTF-8" %>
 
 <%
+<<<<<<< Updated upstream
 
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");
 
 
+=======
+    request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");
+
+>>>>>>> Stashed changes
     String action = request.getParameter("action");
     boolean insertSuccess = false;
     String errorMsg = "";
 
+<<<<<<< Updated upstream
+=======
+    // 查询所有部门（用于下拉选项）
+    String sqlDepts = "SELECT id, name FROM departments ORDER BY id ASC";
+    ResultSet rsDepts = DbConnect.select(sqlDepts, null);
+>>>>>>> Stashed changes
 
     if ("insert".equals(action)) {
         String password = request.getParameter("password");
@@ -23,10 +35,19 @@
         String employee_no = request.getParameter("employee_no");
         String cmfPsw = request.getParameter("cmfPsw");
 
+<<<<<<< Updated upstream
 
         boolean hasError = false;
 
         if (password == null || password.trim().isEmpty()) {
+=======
+        boolean hasError = false;
+
+        if (employee_no == null || employee_no.trim().isEmpty()) {
+            hasError = true;
+            errorMsg = "员工编号不能为空";
+        } else if (password == null || password.trim().isEmpty()) {
+>>>>>>> Stashed changes
             hasError = true;
             errorMsg = "密码不能为空";
         } else if (!password.equals(cmfPsw)) {
@@ -41,10 +62,16 @@
         } else if (phone == null || phone.trim().isEmpty()) {
             hasError = true;
             errorMsg = "联系电话不能为空";
+        } else if (department_id == null || department_id.trim().isEmpty()) {
+            hasError = true;
+            errorMsg = "请选择部门";
         }
 
         if (!hasError) {
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
             String sqlInsert = "INSERT INTO `employees`(`employee_no`, `department_id`, `username`, `password`, `email`, `phone`) VALUES (?, ?, ?, ?, ?, ?)";
             Object[] paramsInsert = new Object[]{employee_no, department_id, username, password, email, phone};
             int result = DbConnect.update(sqlInsert, paramsInsert);
@@ -104,7 +131,15 @@
         </div>
         <div class="form-item">
             <label for="department_id">部门：</label>
-            <input value="" id="department_id" name="department_id" type="text">
+            <select id="department_id" name="department_id">
+                <option value="">请选择部门</option>
+                <% while (rsDepts.next()) {
+                    String deptId = rsDepts.getString("id");
+                    String deptName = rsDepts.getString("name");
+                %>
+                <option value="<%=deptId%>"><%=deptName%></option>
+                <% } %>
+            </select>
             <span class="error" id="departmentError"></span>
         </div>
         <div class="form-item">
@@ -127,36 +162,53 @@
 <script src="../js/jquery-3.5.1.min.js"></script>
 <script src="../js/common.js"></script>
 <script>
+<<<<<<< Updated upstream
 
     $(document).ready(function () {
 
         var insertSuccess = <%=insertSuccess ? "true" : "false" %>;
         if (insertSuccess) {
 
+=======
+    $(document).ready(function () {
+        var insertSuccess = <%=insertSuccess ? "true" : "false" %>;
+        if (insertSuccess) {
+>>>>>>> Stashed changes
             alert("添加成功！");
             window.location.href = "list.jsp";
         }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         $("#btnBack").click(function () {
             window.location.href = "list.jsp";
         });
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         $("#addForm").submit(function (event) {
             var isValid = true;
             var password = $("#password").val();
             var cmfPsw = $("#cmfPsw").val();
             var username = $("#username").val();
             var email = $("#email").val();
-            var department = $("#department_id").val();
+            var department = $("#department_id").val(); // 下拉选择直接获取值
             var phone = $("#phone").val();
             var employee_no = $("#employee_no").val();
 
+<<<<<<< Updated upstream
 
             $(".error").text("");
 
 
+=======
+            $(".error").text("");
+
+>>>>>>> Stashed changes
             if (employee_no.trim() === "") {
                 $("#employee_noError").text("员工编号不能为空");
                 isValid = false;
@@ -174,12 +226,16 @@
                 isValid = false;
             }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
             if (username.trim() === "") {
                 $("#usernameError").text("姓名不能为空");
                 isValid = false;
             }
 
+<<<<<<< Updated upstream
 
             if (department.trim() === "") {
                 $("#departmentError").text("部门不能为空");
@@ -187,12 +243,22 @@
             }
 
 
+=======
+            if (department === "") { // 下拉选择判断值是否为空
+                $("#departmentError").text("请选择部门");
+                isValid = false;
+            }
+
+>>>>>>> Stashed changes
             if (phone.trim() === "") {
                 $("#phoneError").text("电话不能为空");
                 isValid = false;
             }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
             if (email.trim() === "") {
                 $("#emailError").text("邮箱不能为空");
                 isValid = false;
@@ -201,13 +267,19 @@
                 isValid = false;
             }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
             if (!isValid) {
                 event.preventDefault();
             }
         });
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         function validateEmail(email) {
             var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(email);
