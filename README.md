@@ -1,6 +1,7 @@
-# 数据库表结构定义
+#设备管理后台系统
+##大学期末作品，运行自行新建数据库
 
-## 管理员表
+### 数据库结构
 ```sql
 CREATE TABLE admins (
     id INT PRIMARY KEY AUTO_INCREMENT,
